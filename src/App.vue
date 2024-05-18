@@ -20,6 +20,9 @@
             <li class="nav-item">
               <RouterLink class="nav-link" to="/type">Types</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/state">States</RouterLink>
+            </li>
           </ul>
           <span class="navbar-text">
             Korisnik 123
