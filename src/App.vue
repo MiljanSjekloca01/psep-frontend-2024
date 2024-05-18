@@ -14,15 +14,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <RouterLink class="nav-link" to="/">Home</RouterLink>
-            </li>
-            <li class="nav-item">
-              <RouterLink class="nav-link" to="/type">Types</RouterLink>
-            </li>
-            <li class="nav-item">
-              <RouterLink class="nav-link" to="/state">States</RouterLink>
-            </li>
+            <li class="nav-item"> <RouterLink class="nav-link" to="/">Home</RouterLink> </li>
+            <li class="nav-item"> <RouterLink class="nav-link" to="/type">Types</RouterLink> </li>
+            <li class="nav-item"> <RouterLink class="nav-link" to="/state">States</RouterLink> </li>
+            <li class="nav-item"> <RouterLink class="nav-link" to="/manufacturer">Manufacturers</RouterLink> </li>
+
           </ul>
           <span class="navbar-text">
             Korisnik 123

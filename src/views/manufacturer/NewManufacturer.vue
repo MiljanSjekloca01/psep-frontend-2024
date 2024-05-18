@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import router from '@/router';
-import { StateService } from '@/services/state.service';
+import { ManufacturerService } from '@/services/manufacturer.service';
 import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 
 
 const route = useRoute()
-const state = ref<any>({
+const manufacturer = ref<any>({
     name: ""
 })
     
 
-async function onCreateStateClicked(name: string){
-   await StateService.createState(name).then(rsp => {
+async function onCreateManufacturerClicked(name: string){
+   await ManufacturerService.createManufacturer(name).then(rsp => {
         router.push({ path: "./"})
    })
 }
@@ -21,20 +21,20 @@ async function onCreateStateClicked(name: string){
 
 <template>
     <div>
-        <h1 class="h3">Create State</h1>
+        <h1 class="h3">Create Manufacturer</h1>
         <form>
         
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" v-model="state.name" >
+                <input type="text" class="form-control" id="name" v-model="manufacturer.name" >
             </div>
         </form>
         <RouterLink class="btn btn-md btn-secondary" to="./">
         <i class="fa-solid fa-rotate-left"></i>
         Return</RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="onCreateStateClicked(state.name)" :disabled="state.name === '' || state.name.length < 2">
+        @click="onCreateManufacturerClicked(manufacturer.name)" :disabled="manufacturer.name === '' || manufacturer.name.length < 2">
         <i class="fa-solid fa-download"></i>
-        Create State</button>
+        Create Manufacturer</button>
     </div>
 </template>
