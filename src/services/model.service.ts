@@ -15,11 +15,11 @@ export class ModelService {
         return await useAxios(`/model/${id}`)
     }
 
-    static async updateModelById(id: number, model: any){
+    static async updateModelById(id: number, model: ModelModel){
         return await useAxios(`/model/update/${id}`,"put",model)
     }
 
-    static async createModel(model: any){
+    static async createModel(model: ModelModel){
         return await useAxios("/model/create","post",model)
     }
 

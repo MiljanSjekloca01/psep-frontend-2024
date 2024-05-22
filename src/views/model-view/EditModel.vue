@@ -7,6 +7,7 @@ import type { ManufacturerModel } from '@/models/manufacturer.model';
 import { ModelService } from '@/services/model.service';
 import { TypeService } from '@/services/type.service';
 import { ManufacturerService } from '@/services/manufacturer.service';
+import type { ModelModel } from '@/models/model.model';
 
 const route = useRoute()
 const router = useRouter();
@@ -24,20 +25,20 @@ ManufacturerService.getAllManufacturers().then(rsp => {
     manufacturers.value = rsp.data
 })
 
-const model = ref<any>()
+const model = ref<ModelModel>()
 ModelService.getModelById(id).then(rsp => {
     model.value = rsp.data
     oldModelData = {...rsp.data}
 })
 
-async function updateEditedModel(model: any){
+async function updateEditedModel(model: ModelModel){
     await ModelService.updateModelById(id,model).then(rsp => {
         router.push({ path: "./"})
     })
 }
 
 
-function validationCheck(model: any) {
+function validationCheck(model: ModelModel) {
     const { name, manufacturerId, typeId } = model;
 
     const isInvalidName = name === '' || name.length < 2;

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { ManufacturerModel } from '@/models/manufacturer.model';
+import type { ModelModel } from '@/models/model.model';
 import type { TypeModel } from '@/models/type.model';
 import { ManufacturerService } from '@/services/manufacturer.service';
 import { ModelService } from '@/services/model.service';
@@ -26,7 +27,7 @@ ManufacturerService.getAllManufacturers().then(rsp => {
 
 
     
-async function onCreateModelClicked(model: any){
+async function onCreateModelClicked(model: ModelModel){
     await ModelService.createModel(model).then(rsp => {
         router.push({ path: "./"})
     })
