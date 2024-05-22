@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import router from '@/router';
 import { TypeService } from '@/services/type.service';
 import { ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 
-const route = useRoute()
+const router = useRouter()
 const type = ref<any>({
     name: ""
 })

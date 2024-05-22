@@ -45,7 +45,7 @@ async function removeThisType(id: number){
         <td>
             <div class="btn-group">
                 <RouterLink class="btn btn-sm btn-secondary m-2" :to="`/type/${t.typeId}`">
-                    <i class="fa-regular fa-circle-question"></i></RouterLink>
+                    <i class="fa-solid fa-pencil"></i></RouterLink>
             
                 <button type="button" class="btn btn-sm btn-danger m-2"
                     @click="removeThisType(t.typeId)">

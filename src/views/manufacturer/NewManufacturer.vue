@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import router from '@/router';
 import { ManufacturerService } from '@/services/manufacturer.service';
 import { ref } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 
-const route = useRoute()
+const router = useRouter()
 const manufacturer = ref<any>({
     name: ""
 })

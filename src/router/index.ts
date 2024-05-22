@@ -9,6 +9,12 @@ import NewState from '@/views/states/NewState.vue'
 import ManufacturerView from "../views/manufacturer/ManufacturerView.vue"
 import EditManufacturer from '@/views/manufacturer/EditManufacturer.vue'
 import NewManufacturer from '@/views/manufacturer/NewManufacturer.vue'
+import CustomersView from '@/views/customers/CustomersView.vue'
+import EditCustomer from '@/views/customers/EditCustomer.vue'
+import NewCustomer from '@/views/customers/NewCustomer.vue'
+import ModelView from "@/views/model-view/ModelView.vue"
+import EditModel from "@/views/model-view/EditModel.vue"
+import NewModel from "@/views/model-view/NewModel.vue"
 
 
 
@@ -28,7 +34,15 @@ const router = createRouter({
     { path: '/manufacturer', name: 'manufacturer', component: ManufacturerView },
     { path: '/manufacturer/:id', name: 'edit-manufacturer', component: EditManufacturer },
     { path: '/manufacturer/new', name: 'new-manufacturer', component: NewManufacturer },  
-    
+     //Customer 
+     { path: '/customer', name: 'customer', component: CustomersView },
+     { path: '/customer/:id', name: 'edit-customer', component: EditCustomer },
+     { path: '/customer/new', name: 'new-customer', component: NewCustomer },
+     //Model 
+     { path: '/model', name: 'model', component: ModelView },
+     { path: '/model/:id', name: 'edit-model', component: EditModel },
+     { path: '/model/new', name: 'new-model', component: NewModel },  
+
   ]
 })
 
