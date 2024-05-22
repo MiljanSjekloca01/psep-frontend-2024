@@ -25,7 +25,7 @@ async function removeThisCustomer(id: number){
 
 <div v-if="customers">   
     <h1 class="h3">Customers</h1>
-    <table class="table">
+    <table class="table text-center">
     <thead>
         <tr>
         <th scope="col">#</th>

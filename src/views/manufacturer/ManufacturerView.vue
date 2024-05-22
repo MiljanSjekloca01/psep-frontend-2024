@@ -25,7 +25,7 @@ async function removeThisManufacturer(id: number){
 
 <div v-if="manufacturers">   
     <h1 class="h3">Manufacturers</h1>
-    <table class="table">
+    <table class="table text-center">
     <thead>
         <tr>
         <th scope="col">#</th>

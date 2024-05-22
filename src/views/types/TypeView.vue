@@ -26,7 +26,7 @@ async function removeThisType(id: number){
 
 <div v-if="types">   
     <h1 class="h3">Types</h1>
-    <table class="table">
+    <table class="table text-center">
     <thead>
         <tr>
         <th scope="col">#</th>

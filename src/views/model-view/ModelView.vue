@@ -25,7 +25,7 @@ async function removeThisModel(id: number){
 
 <div v-if="models">   
     <h1 class="h3">Models</h1>
-    <table class="table">
+    <table class="table text-center">
     <thead>
         <tr>
         <th scope="col">#</th>

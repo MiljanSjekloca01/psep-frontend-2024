@@ -25,7 +25,7 @@ async function removeThisState(id: number){
 
 <div v-if="states">   
     <h1 class="h3">States</h1>
-    <table class="table">
+    <table class="table text-center">
     <thead>
         <tr>
         <th scope="col">#</th>
