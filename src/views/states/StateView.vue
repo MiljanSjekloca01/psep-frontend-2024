@@ -56,8 +56,9 @@ async function removeThisState(id: number){
         </tbody>
     </table>
     <RouterLink class="btn btn-md btn-success" to="/state/new">
-    <i class="fa-solid fa-circle-plus"></i>
-    Add New State</RouterLink>
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New State
+    </RouterLink>
 </div> 
 
 <div v-else>States are being loaded... Please wait</div>

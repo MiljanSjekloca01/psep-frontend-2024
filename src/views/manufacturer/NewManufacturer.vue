@@ -12,7 +12,7 @@ const manufacturer = ref<any>({
 
 async function onCreateManufacturerClicked(name: string){
    await ManufacturerService.createManufacturer(name).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/manufacturer"})
    })
 }
 
@@ -28,12 +28,14 @@ async function onCreateManufacturerClicked(name: string){
                 <input type="text" class="form-control" id="name" v-model="manufacturer.name" >
             </div>
         </form>
-        <RouterLink class="btn btn-md btn-secondary" to="./">
-        <i class="fa-solid fa-rotate-left"></i>
-        Return</RouterLink>&nbsp;
+        <RouterLink class="btn btn-md btn-secondary" to="/manufacturer">
+            <i class="fa-solid fa-rotate-left"></i>
+            Return
+        </RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="onCreateManufacturerClicked(manufacturer.name)" :disabled="manufacturer.name === '' || manufacturer.name.length < 2">
-        <i class="fa-solid fa-download"></i>
-        Create Manufacturer</button>
+            @click="onCreateManufacturerClicked(manufacturer.name)" :disabled="manufacturer.name === '' || manufacturer.name.length < 2">
+            <i class="fa-solid fa-download"></i>
+            Create Manufacturer
+        </button>
     </div>
 </template>

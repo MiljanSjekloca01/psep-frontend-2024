@@ -29,7 +29,7 @@ ManufacturerService.getAllManufacturers().then(rsp => {
     
 async function onCreateModelClicked(model: ModelModel){
     await ModelService.createModel(model).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/model"})
     })
 }
 
@@ -53,26 +53,28 @@ function validationCheck(model: any) {
                 <input type="text" class="form-control" id="name" v-model="model.name" >
             </div>
             <div class="mb-3">
-                <label for="manufacturerId" class="form-label">Manufacturers</label>
+                <label for="manufacturerId" class="form-label">Manufacturer</label>
                 <select class="form-select" aria-label="Default select example" v-model="model.manufacturerId">
                     <option selected value=0>Select from available manufacturers</option>
                     <option v-for="m in manufacturers" :value="m.manufacturerId">{{ m.name }}</option>
                 </select>
             </div>
             <div class="mb-3">
-                <label for="typeId" class="form-label">Available Types</label>
+                <label for="typeId" class="form-label">Type</label>
                 <select class="form-select" aria-label="Default select example" v-model="model.typeId">
                     <option selected value=0>Select from available types</option>
                     <option v-for="t in types" :value="t.typeId">{{ t.name }}</option>
                 </select>
             </div>  
         </form>
-        <RouterLink class="btn btn-md btn-secondary" to="./">
-        <i class="fa-solid fa-rotate-left"></i>
-        Return</RouterLink>&nbsp;
+        <RouterLink class="btn btn-md btn-secondary" to="/model">
+            <i class="fa-solid fa-rotate-left"></i>
+            Return
+        </RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="onCreateModelClicked(model)" :disabled="validationCheck(model)">
-        <i class="fa-solid fa-download"></i>
-        Create Model</button>
+            @click="onCreateModelClicked(model)" :disabled="validationCheck(model)">
+            <i class="fa-solid fa-download"></i>
+            Create Model
+        </button>
     </div>
 </template>

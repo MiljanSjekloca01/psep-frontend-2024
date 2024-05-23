@@ -60,8 +60,9 @@ async function removeThisModel(id: number){
         </tbody>
     </table>
     <RouterLink class="btn btn-md btn-success" to="/model/new">
-    <i class="fa-solid fa-circle-plus"></i>
-    Add New Model</RouterLink>
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New Model
+    </RouterLink>
 </div> 
 
 <div v-else>Models are being loaded... Please wait</div>

@@ -15,7 +15,7 @@ const customer = ref<any>({
 async function onCreateCustomerClicked(customer: CustomerModel){
     if(customer.taxId == 0 || customer.taxId === undefined) customer.taxId = null;
     await CustomerService.createCustomer(customer).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/customer"})
     })
 }
 
@@ -53,11 +53,13 @@ function validationCheck(customer: CustomerModel) {
            
         </form>
         <RouterLink class="btn btn-md btn-secondary" to="./">
-        <i class="fa-solid fa-rotate-left"></i>
-        Return</RouterLink>&nbsp;
+            <i class="fa-solid fa-rotate-left"></i>
+            Return
+        </RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="onCreateCustomerClicked(customer)" :disabled="validationCheck(customer)">
-        <i class="fa-solid fa-download"></i>
-        Create Customer</button>
+            @click="onCreateCustomerClicked(customer)" :disabled="validationCheck(customer)">
+            <i class="fa-solid fa-download"></i>
+            Create Customer
+        </button>
     </div>
 </template>

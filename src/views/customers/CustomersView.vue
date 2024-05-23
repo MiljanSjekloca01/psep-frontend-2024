@@ -49,9 +49,16 @@ async function removeThisCustomer(id: number){
         <td>{{ formatDate(c.updatedAt) }}</td>
         <td>
             <div class="btn-group">
-                <RouterLink class="btn btn-sm btn-secondary m-1" :to="`/customer/${c.customerId}`">
-                    <i class="fa-solid fa-pencil"></i></RouterLink>
-            
+                <RouterLink class="btn btn-sm btn-secondary m-1"
+                    :to="`/customer/${c.customerId}`">
+                    <i class="fa-solid fa-pencil"></i>
+                </RouterLink>
+                
+                <RouterLink class="btn btn-sm btn-primary m-1" 
+                    :to="`/customer/${c.customerId}/device`">
+                    <i class="fa-solid fa-plug"></i>
+                </RouterLink>
+
                 <button type="button" class="btn btn-sm btn-danger m-1"
                     @click="removeThisCustomer(c.customerId)">
                     <i class="fa-solid fa-trash"></i>

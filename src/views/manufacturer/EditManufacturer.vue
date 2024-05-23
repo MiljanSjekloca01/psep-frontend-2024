@@ -18,7 +18,7 @@ ManufacturerService.getManufacturerById(id).then(rsp => {
 
 async function updateEditedManufacturer(name: string){
    await ManufacturerService.updateManufacturerById(id,name).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/manufacturer"})
    })
 }
 
@@ -45,12 +45,14 @@ async function updateEditedManufacturer(name: string){
                 <input type="text" class="form-control" id="updatedAt" disabled :value="formatDate(manufacturer.updatedAt)">
             </div>
         </form>
-        <RouterLink class="btn btn-md btn-secondary" to="./">
-        <i class="fa-solid fa-rotate-left"></i> 
-        Return</RouterLink>&nbsp;
+        <RouterLink class="btn btn-md btn-secondary" to="/manufacturer">
+            <i class="fa-solid fa-rotate-left"></i> 
+            Return
+        </RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="updateEditedManufacturer(manufacturer.name)" :disabled="manufacturer.name === '' || manufacturer.name === oldName || manufacturer.name.length < 2">
-        <i class="fa-solid fa-download"></i>
-        Save</button>
+            @click="updateEditedManufacturer(manufacturer.name)" :disabled="manufacturer.name === '' || manufacturer.name === oldName || manufacturer.name.length < 2">
+            <i class="fa-solid fa-download"></i>
+            Save
+        </button>
     </div>
 </template>

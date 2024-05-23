@@ -19,7 +19,7 @@ TypeService.getTypeById(id).then(rsp => {
 
 async function updateEditedType(name: string){
    await TypeService.updateTypeById(id,name).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/type"})
    })
 }
 
@@ -46,12 +46,14 @@ async function updateEditedType(name: string){
                 <input type="text" class="form-control" id="updatedAt" disabled :value="formatDate(type.updatedAt)">
             </div>
         </form>
-        <RouterLink class="btn btn-md btn-secondary" to="./">
-        <i class="fa-solid fa-rotate-left"></i> 
-        Return</RouterLink>&nbsp;
+        <RouterLink class="btn btn-md btn-secondary" to="/type">
+            <i class="fa-solid fa-rotate-left"></i> 
+            Return
+        </RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="updateEditedType(type.name)" :disabled="type.name === '' || type.name === oldName || type.name.length < 2">
-        <i class="fa-solid fa-download"></i>
-        Save</button>
+            @click="updateEditedType(type.name)" :disabled="type.name === '' || type.name === oldName || type.name.length < 2">
+            <i class="fa-solid fa-download"></i>
+            Save
+        </button>
     </div>
 </template>

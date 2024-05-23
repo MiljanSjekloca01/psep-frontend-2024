@@ -10,6 +10,7 @@ const router = useRouter();
 const id = Number.parseInt(route.params.id as any)
 const customer = ref<CustomerModel>()
 var oldCustomerData: CustomerModel;
+
 CustomerService.getCustomerById(id).then(rsp => {
     customer.value = rsp.data
     oldCustomerData = { ...rsp.data };
@@ -17,7 +18,7 @@ CustomerService.getCustomerById(id).then(rsp => {
 
 async function updateEditedCustomer(customer: CustomerModel){
     await CustomerService.updateCustomerById(id,customer).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/customer"})
     })
 }
 
@@ -81,12 +82,14 @@ function validationCheck(customer: CustomerModel) {
                 <input type="text" class="form-control" id="updatedAt" disabled :value="formatDate(customer.updatedAt)">
             </div>
         </form>
-        <RouterLink class="btn btn-md btn-secondary" to="./">
-        <i class="fa-solid fa-rotate-left"></i> 
-        Return</RouterLink>&nbsp;
+        <RouterLink class="btn btn-md btn-secondary" to="/customer">
+            <i class="fa-solid fa-rotate-left"></i> 
+            Return
+        </RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="updateEditedCustomer(customer)" :disabled="validationCheck(customer)">
-        <i class="fa-solid fa-download"></i>
-        Save</button>
+            @click="updateEditedCustomer(customer)" :disabled="validationCheck(customer)">
+            <i class="fa-solid fa-download"></i>
+            Save
+        </button>
     </div>
 </template>

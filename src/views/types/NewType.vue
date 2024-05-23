@@ -14,7 +14,7 @@ const type = ref<any>({
 
 async function onCreateTypeClicked(name: string){
    await TypeService.createType(name).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/type"})
    })
 }
 
@@ -30,12 +30,14 @@ async function onCreateTypeClicked(name: string){
                 <input type="text" class="form-control" id="name" v-model="type.name" >
             </div>
         </form>
-        <RouterLink class="btn btn-md btn-secondary" to="./">
-        <i class="fa-solid fa-rotate-left"></i>
-        Return</RouterLink>&nbsp;
+        <RouterLink class="btn btn-md btn-secondary" to="/type">
+            <i class="fa-solid fa-rotate-left"></i>
+            Return
+        </RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="onCreateTypeClicked(type.name)" :disabled="type.name === '' || type.name.length < 2">
-        <i class="fa-solid fa-download"></i>
-        Create Type</button>
+            @click="onCreateTypeClicked(type.name)" :disabled="type.name === '' || type.name.length < 2">
+            <i class="fa-solid fa-download"></i>
+            Create Type
+        </button>
     </div>
 </template>

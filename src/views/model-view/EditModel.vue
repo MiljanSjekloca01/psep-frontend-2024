@@ -33,7 +33,7 @@ ModelService.getModelById(id).then(rsp => {
 
 async function updateEditedModel(model: ModelModel){
     await ModelService.updateModelById(id,model).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/model"})
     })
 }
 
@@ -66,13 +66,13 @@ function validationCheck(model: ModelModel) {
                 <input type="text" class="form-control" id="name" v-model="model.name">
             </div>
             <div class="mb-3">
-                <label for="manufacturerId" class="form-label">Manufacturers</label>
+                <label for="manufacturerId" class="form-label">Manufacturer</label>
                 <select class="form-select" aria-label="Default select example" v-model="model.manufacturerId">
                     <option v-for="m in manufacturers" :value="m.manufacturerId">{{ m.name }}</option>
                 </select>
             </div>
             <div class="mb-3">
-                <label for="typeId" class="form-label">Available Types</label>
+                <label for="typeId" class="form-label">Type</label>
                 <select class="form-select" aria-label="Default select example" v-model="model.typeId">
                     <option v-for="t in types" :value="t.typeId">{{ t.name }}</option>
                 </select>
@@ -86,12 +86,14 @@ function validationCheck(model: ModelModel) {
                 <input type="text" class="form-control" id="updatedAt" disabled :value="formatDate(model.updatedAt)">
             </div>
         </form>
-        <RouterLink class="btn btn-md btn-secondary" to="./">
-        <i class="fa-solid fa-rotate-left"></i> 
-        Return</RouterLink>&nbsp;
+        <RouterLink class="btn btn-md btn-secondary" to="/model">
+            <i class="fa-solid fa-rotate-left"></i> 
+            Return
+        </RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="updateEditedModel(model)" :disabled="validationCheck(model)">
-        <i class="fa-solid fa-download"></i>
-        Save</button>
+            @click="updateEditedModel(model)" :disabled="validationCheck(model)">
+            <i class="fa-solid fa-download"></i>
+            Save
+        </button>
     </div>
 </template>

@@ -12,7 +12,7 @@ const state = ref<any>({
 
 async function onCreateStateClicked(name: string){
    await StateService.createState(name).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/state"})
    })
 }
 
@@ -28,12 +28,13 @@ async function onCreateStateClicked(name: string){
                 <input type="text" class="form-control" id="name" v-model="state.name" >
             </div>
         </form>
-        <RouterLink class="btn btn-md btn-secondary" to="./">
+        <RouterLink class="btn btn-md btn-secondary" to="/state">
         <i class="fa-solid fa-rotate-left"></i>
         Return</RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="onCreateStateClicked(state.name)" :disabled="state.name === '' || state.name.length < 2">
-        <i class="fa-solid fa-download"></i>
-        Create State</button>
+            @click="onCreateStateClicked(state.name)" :disabled="state.name === '' || state.name.length < 2">
+            <i class="fa-solid fa-download"></i>
+            Create State
+        </button>
     </div>
 </template>

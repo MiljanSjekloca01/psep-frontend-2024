@@ -15,7 +15,9 @@ import NewCustomer from '@/views/customers/NewCustomer.vue'
 import ModelView from "@/views/model-view/ModelView.vue"
 import EditModel from "@/views/model-view/EditModel.vue"
 import NewModel from "@/views/model-view/NewModel.vue"
-
+import DeviceView from "@/views/device/DeviceView.vue"
+import NewDevice from "@/views/device/NewDevice.vue"
+import EditDevice from "@/views/device/EditDevice.vue"
 
 
 const router = createRouter({
@@ -42,7 +44,10 @@ const router = createRouter({
      { path: '/model', name: 'model', component: ModelView },
      { path: '/model/:id', name: 'edit-model', component: EditModel },
      { path: '/model/new', name: 'new-model', component: NewModel },  
-
+     //Device
+     { path: "/customer/:id/device", name: "device", component: DeviceView },
+     { path: "/customer/:id/device/new", name: "new-device", component: NewDevice },
+     { path: "/customer/:id/device/:id", name: "edit-device", component: EditDevice }
   ]
 })
 

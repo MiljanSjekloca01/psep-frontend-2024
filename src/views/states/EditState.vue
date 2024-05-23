@@ -18,7 +18,7 @@ StateService.getStateById(id).then(rsp => {
 
 async function updateEditedState(name: string){
    await StateService.updateStateById(id,name).then(rsp => {
-        router.push({ path: "./"})
+        router.push({ path: "/state"})
    })
 }
 
@@ -45,12 +45,14 @@ async function updateEditedState(name: string){
                 <input type="text" class="form-control" id="updatedAt" disabled :value="formatDate(state.updatedAt)">
             </div>
         </form>
-        <RouterLink class="btn btn-md btn-secondary" to="./">
-        <i class="fa-solid fa-rotate-left"></i> 
-        Return</RouterLink>&nbsp;
+        <RouterLink class="btn btn-md btn-secondary" to="/state">
+            <i class="fa-solid fa-rotate-left"></i> 
+            Return
+        </RouterLink>&nbsp;
         <button type="button" class="btn btn-md btn-success"
-        @click="updateEditedState(state.name)" :disabled="state.name === '' || state.name === oldName || state.name.length < 2">
-        <i class="fa-solid fa-download"></i>
-        Save</button>
+            @click="updateEditedState(state.name)" :disabled="state.name === '' || state.name === oldName || state.name.length < 2">
+            <i class="fa-solid fa-download"></i>
+            Save
+        </button>
     </div>
 </template>

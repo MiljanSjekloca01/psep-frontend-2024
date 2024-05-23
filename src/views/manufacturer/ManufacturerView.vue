@@ -15,12 +15,9 @@ async function removeThisManufacturer(id: number){
         console.log(rsp);
         manufacturers.value = manufacturers.value?.filter(m => m.manufacturerId !== id )
     }) 
-
 }
 
-
 </script>
-
 <template>
 
 <div v-if="manufacturers">   
@@ -56,8 +53,9 @@ async function removeThisManufacturer(id: number){
         </tbody>
     </table>
     <RouterLink class="btn btn-md btn-success" to="/manufacturer/new">
-    <i class="fa-solid fa-circle-plus"></i>
-    Add New Manufacturer</RouterLink>
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New Manufacturer
+    </RouterLink>
 </div> 
 
 <div v-else>Manufacturers are being loaded... Please wait</div>
