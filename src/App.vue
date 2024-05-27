@@ -23,6 +23,7 @@ function logout(){
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" v-if="isAuthenticated">
+            <RouterLink class="nav-link" to="/search">Search By Code</RouterLink>
             <li class="nav-item"> <RouterLink class="nav-link" to="/customer">Customers</RouterLink> </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

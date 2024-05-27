@@ -16,6 +16,10 @@ export class ServiceService {
         return await useAxios(`/service/${id}`)
     }
 
+    static async getServiceByCode(code: string){
+        return await useAxios(`/service/code/${code}`)
+    }
+
     static async updateServiceById(id: number, model: ServiceModel){
         return await useAxios(`/service/update/${id}`,"put",model)
     }

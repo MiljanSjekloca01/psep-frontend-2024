@@ -21,6 +21,7 @@ import LoginView from "@/views/LoginView.vue"
 import ServiceView from "@/views/service-view/ServiceView.vue"
 import NewService from "@/views/service-view/NewService.vue"
 import EditService from "@/views/service-view/EditService.vue"
+import SearchView from "@/views/SearchView.vue"
 
 
 const router = createRouter({
@@ -57,6 +58,8 @@ const router = createRouter({
      { path: "/customer/:customerId/device/:deviceId/service", name: "service", component: ServiceView },
      { path: "/customer/:customerId/device/:deviceId/service/new", name: "new-service", component: NewService },
      { path: "/customer/:customerId/device/:deviceId/service/:serviceId", name: "edit-service", component: EditService },
+     // Search
+     { path: "/search", name:"search", component: SearchView },
   ]
 })
 
