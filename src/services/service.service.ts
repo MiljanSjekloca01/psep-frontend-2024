@@ -9,7 +9,6 @@ export class ServiceService {
     }
 
     static async deleteServiceById(id: number){
-        console.log(id);
         return await useAxios(`/service/delete/${id}`,"put")
     }
 

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import type { ServiceModel } from '@/models/service.model';
-import type { ModelModel } from '@/models/model.model';
 import { ServiceService } from '@/services/service.service';
-import { ModelService } from '@/services/model.service';
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { StateService } from '@/services/state.service';
@@ -14,7 +12,6 @@ const customer_id = Number.parseInt(route.params.customerId as any)
 
 const router = useRouter()
 const service = ref<any>({
-    code: "",
     deviceId: device_id,
     stateId: 0
 })
@@ -27,17 +24,15 @@ StateService.getAllStates().then(rsp => {
 
 async function onCreateServiceClicked(model: ServiceModel){
     await ServiceService.createService(model).then(rsp => {
-        console.log(model);
         router.push({ path: `/customer/${customer_id}/device/${device_id}/service`})
     })
 }
 
 
 function validationCheck(model: ServiceModel) {
-    const { code, stateId } = model;
-    const isInvalidCode = code === '' || code.length < 3;
+    const { stateId } = model;
     const isInvalidModelId = stateId == 0;
-    return isInvalidCode|| isInvalidModelId;
+    return isInvalidModelId;
 }
 
 </script>
@@ -48,7 +43,7 @@ function validationCheck(model: ServiceModel) {
         <form>
             <div class="mb-3">
                 <label for="code" class="form-label">Code</label>
-                <input type="text" class="form-control" id="code" v-model="service.code" >
+                <input type="text" class="form-control" id="code" disabled placeholder="Automaticly Generated" >
             </div>
             <div class="mb-3">
                 <label for="stateId" class="form-label">State</label>

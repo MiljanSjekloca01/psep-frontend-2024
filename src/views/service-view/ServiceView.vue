@@ -13,7 +13,6 @@ const services = ref<ServiceModel[]>()
 
 ServiceService.getAllServicesByDevice(device_id).then(rsp => {
     services.value = rsp.data
-    console.log(services.value)
 })
 
 async function removeThisService(id: number){

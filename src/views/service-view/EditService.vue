@@ -2,12 +2,8 @@
 import { ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { formatDate } from '@/services/main.service';
-import { ModelService } from '@/services/model.service';
-import type { ModelModel } from '@/models/model.model';
 import type { ServiceModel } from '@/models/service.model';
 import { ServiceService } from '@/services/service.service';
-import type { CustomerModel } from '@/models/customer.model';
-import { CustomerService } from '@/services/customer.service';
 import type { StateModel } from '@/models/state.model';
 import { StateService } from '@/services/state.service';
 
@@ -26,7 +22,7 @@ ServiceService.getServiceById(service_id).then(rsp => {
     oldServiceData = {...rsp.data}
 })
 
-console.log(service)
+
 const states = ref<StateModel[]>()
 StateService.getAllStates().then(rsp => {
     states.value = rsp.data
@@ -41,13 +37,11 @@ async function updateEditedService(model: ServiceModel){
 
 
 function validationCheck(model: ServiceModel) {
-    const { code, stateId } = model;
-    const isInvalidCode = code === '' || code.length < 3;
+    const { stateId } = model;
     const isUnedited = (
-        code === oldServiceData.code &&
         stateId === oldServiceData.stateId
     )
-    return isInvalidCode || isUnedited
+    return isUnedited
 }
 
 </script>
@@ -62,7 +56,7 @@ function validationCheck(model: ServiceModel) {
             </div>
             <div class="mb-3">
                 <label for="code" class="form-label">Code</label>
-                <input type="text" class="form-control" id="code" v-model="service.code">
+                <input type="text" class="form-control" id="code" disabled :value="service.code">
             </div>
             <div class="mb-3">
                 <label for="stateId" class="form-label">State</label>

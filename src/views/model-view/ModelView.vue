@@ -12,7 +12,6 @@ ModelService.getAllModels().then(rsp => {
 
 async function removeThisModel(id: number){
     await ModelService.deleteModelById(id).then(rsp => {
-        console.log(rsp);
         models.value = models.value?.filter(m => m.modelId !== id )
     }) 
 

@@ -12,7 +12,6 @@ CustomerService.getAllCustomers().then(rsp => {
 
 async function removeThisCustomer(id: number){
     await CustomerService.deleteCustomerById(id).then(rsp => {
-        console.log(rsp);
         customers.value = customers.value?.filter(c => c.customerId !== id )
     }) 
 

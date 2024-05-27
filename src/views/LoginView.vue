@@ -16,6 +16,8 @@ async function doLogin(){
         AuthService.saveAuth(rsp.data)
         router.push({ path: "/customer"})
     }catch(e){
+        username.value = ""
+        password.value = ""
         alert(e)
     }
     

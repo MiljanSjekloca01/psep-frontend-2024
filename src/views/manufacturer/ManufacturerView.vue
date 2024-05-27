@@ -12,7 +12,6 @@ ManufacturerService.getAllManufacturers().then(rsp => {
 
 async function removeThisManufacturer(id: number){
     await ManufacturerService.deleteManufacturerById(id).then(rsp => {
-        console.log(rsp);
         manufacturers.value = manufacturers.value?.filter(m => m.manufacturerId !== id )
     }) 
 }

@@ -12,7 +12,6 @@ StateService.getAllStates().then(rsp => {
 
 async function removeThisState(id: number){
     await StateService.deleteStateById(id).then(rsp => {
-        console.log(rsp);
         states.value = states.value?.filter(s => s.stateId !== id )
     }) 
 

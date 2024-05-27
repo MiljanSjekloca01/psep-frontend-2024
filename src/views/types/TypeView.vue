@@ -13,7 +13,6 @@ TypeService.getAllTypes().then(rsp => {
 
 async function removeThisType(id: number){
     await TypeService.deleteTypeById(id).then(rsp => {
-        console.log(rsp);
         types.value = types.value?.filter(t => t.typeId !== id )
     }) 
 
