@@ -100,12 +100,16 @@ async function removeThisDevice(id: number){
     </RouterLink>
 </div> 
 
-<div v-else>
-    <div class="mb-3">Device are being loaded.. or there is no any</div>
+<div v-else-if="devices?.length == 0">
+    <div class="mb-3">Create a new device for Customer with ID {{ id }}</div>    
     <RouterLink class="btn btn-md btn-success" :to="`/customer/${id}/device/new`">
-    <i class="fa-solid fa-circle-plus"></i>
-    Add New Device
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New Device
     </RouterLink>
+</div>
+
+<div v-else>
+    <div class="mb-3">Device are being loaded..</div>    
 </div>
 
 </template>

@@ -60,6 +60,14 @@ async function removeThisState(id: number){
     </RouterLink>
 </div> 
 
+<div v-else-if="states?.length == 0">
+    <div class="mb-3">Create a first state</div>    
+    <RouterLink class="btn btn-md btn-success" to="/state/new">
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New State
+    </RouterLink>
+</div>
+
 <div v-else>States are being loaded... Please wait</div>
 
 </template>

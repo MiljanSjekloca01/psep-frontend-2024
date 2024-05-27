@@ -56,9 +56,18 @@ async function removeThisType(id: number){
         </tbody>
     </table>
     <RouterLink class="btn btn-md btn-success" to="/type/new">
-    <i class="fa-solid fa-circle-plus"></i>
-    Add New Type</RouterLink>
-</div> 
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New Type
+    </RouterLink>
+</div>
+
+<div v-else-if="types?.length == 0">
+    <div class="mb-3">Create a first type</div>    
+    <RouterLink class="btn btn-md btn-success" to="/type/new">
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New Type
+    </RouterLink>
+</div>
 
 <div v-else>Types are being loaded... Please wait</div>
 

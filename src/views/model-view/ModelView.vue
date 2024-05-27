@@ -64,6 +64,14 @@ async function removeThisModel(id: number){
     </RouterLink>
 </div> 
 
+<div v-else-if="models?.length == 0">
+    <div class="mb-3">Create a new model</div>    
+    <RouterLink class="btn btn-md btn-success" to="/model/new">
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New Model
+    </RouterLink>
+</div>
+
 <div v-else>Models are being loaded... Please wait</div>
 
 </template>

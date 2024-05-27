@@ -68,9 +68,18 @@ async function removeThisCustomer(id: number){
         </tbody>
     </table>
     <RouterLink class="btn btn-md btn-success" to="/customer/new">
-    <i class="fa-solid fa-circle-plus"></i>
-    Add New Customer</RouterLink>
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New Customer
+    </RouterLink>
 </div> 
+
+<div v-else-if="customers?.length == 0">
+    <div class="mb-3">Create a new customer</div>    
+    <RouterLink class="btn btn-md btn-success" to="/customer/new">
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New Customer
+    </RouterLink>
+</div>
 
 <div v-else>Customers are being loaded... Please wait</div>
 

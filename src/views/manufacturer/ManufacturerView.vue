@@ -57,6 +57,14 @@ async function removeThisManufacturer(id: number){
     </RouterLink>
 </div> 
 
+<div v-else-if="manufacturers?.length == 0">
+    <div class="mb-3">Create a new manufacturer</div>    
+    <RouterLink class="btn btn-md btn-success" to="/manufacturer/new">
+        <i class="fa-solid fa-circle-plus"></i>
+        Add New Manufacturer
+    </RouterLink>
+</div>
+
 <div v-else>Manufacturers are being loaded... Please wait</div>
 
 </template>
