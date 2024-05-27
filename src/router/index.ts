@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView  from '../views/HomeView.vue'
 import TypeView from '../views/types/TypeView.vue'
 import EditType from '../views/types/EditType.vue'
 import NewType from '@/views/types/NewType.vue'
@@ -18,12 +17,16 @@ import NewModel from "@/views/model-view/NewModel.vue"
 import DeviceView from "@/views/device/DeviceView.vue"
 import NewDevice from "@/views/device/NewDevice.vue"
 import EditDevice from "@/views/device/EditDevice.vue"
+import LoginView from "@/views/LoginView.vue"
+import ServiceView from "@/views/service-view/ServiceView.vue"
+import NewService from "@/views/service-view/NewService.vue"
+import EditService from "@/views/service-view/EditService.vue"
 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    { path: '/', name: 'home', component: HomeView },
+    { path: '/', redirect: "/customer"},
     //Type
     { path: '/type', name: 'type', component: TypeView },
     { path: '/type/:id', name: 'edit-type', component: EditType },
@@ -47,7 +50,13 @@ const router = createRouter({
      //Device
      { path: "/customer/:id/device", name: "device", component: DeviceView },
      { path: "/customer/:id/device/new", name: "new-device", component: NewDevice },
-     { path: "/customer/:id/device/:id", name: "edit-device", component: EditDevice }
+     { path: "/customer/:id/device/:id", name: "edit-device", component: EditDevice },
+     // Login 
+     { path: "/login",name: "login", component: LoginView},
+     // Service
+     { path: "/customer/:customerId/device/:deviceId/service", name: "service", component: ServiceView },
+     { path: "/customer/:customerId/device/:deviceId/service/new", name: "new-service", component: NewService },
+     { path: "/customer/:customerId/device/:deviceId/service/:serviceId", name: "edit-service", component: EditService },
   ]
 })
 

@@ -38,8 +38,8 @@ async function removeThisDevice(id: number){
   </ol>
 </nav>
 
-<div v-if="devices">   
-    <h1 class="h3">{{devices[0].customer.name}} Devices </h1>
+<div v-if="devices && devices.length > 0">   
+    <h1 class="h3" v-if="devices[0]">{{devices[0].customer.name }} Devices </h1>
     <table class="table text-center">
     <thead>
         <tr>
@@ -79,7 +79,12 @@ async function removeThisDevice(id: number){
                 <RouterLink class="btn btn-sm btn-secondary m-1" :to="`device/${d.deviceId}`">
                     <i class="fa-solid fa-pencil"></i>
                 </RouterLink>
-            
+                
+                <RouterLink class="btn btn-sm btn-primary m-1" 
+                    :to="`/customer/${id}/device/${d.deviceId}/service`">
+                    <i class="fa-solid fa-key"></i>
+                </RouterLink>
+
                 <button type="button" class="btn btn-sm btn-danger m-1"
                     @click="removeThisDevice(d.deviceId)">
                     <i class="fa-solid fa-trash"></i>

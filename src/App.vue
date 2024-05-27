@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+import { AuthService,isAuthenticated } from './services/auth.service';
+const router = useRouter()
+
+function logout(){
+  AuthService.clearAuth()
+  router.push({ path: "/login" })
+}
+
 </script>
 
 <template>
@@ -13,8 +22,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"> <RouterLink class="nav-link" to="/">Home</RouterLink> </li>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0" v-if="isAuthenticated">
             <li class="nav-item"> <RouterLink class="nav-link" to="/customer">Customers</RouterLink> </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -27,10 +35,13 @@
                 <li class="nav-item dropdown-item"> <RouterLink class="nav-link" to="/model">Models</RouterLink> </li>
               </ul>
             </li>
+            <li class="nav-item">
+              <button class="nav-link" @click="logout()" type="button">Logout</button>
+            </li>
             
           </ul>
-          <span class="navbar-text">
-            Korisnik 123
+          <span class="navbar-text" v-if="isAuthenticated">
+          <i class="fa-solid fa-user"></i>&nbsp; {{ AuthService.getUsername() }}
           </span>
         </div>
       </div>
