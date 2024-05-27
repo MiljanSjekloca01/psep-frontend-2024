@@ -20,7 +20,7 @@ async function removeThisManufacturer(id: number){
 </script>
 <template>
 
-<div v-if="manufacturers">   
+<div v-if="manufacturers && manufacturers.length > 0">   
     <h1 class="h3">Manufacturers</h1>
     <table class="table text-center">
     <thead>

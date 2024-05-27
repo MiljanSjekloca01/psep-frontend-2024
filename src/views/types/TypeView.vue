@@ -24,7 +24,7 @@ async function removeThisType(id: number){
 
 <template>
 
-<div v-if="types">   
+<div v-if="types && types.length > 0">   
     <h1 class="h3">Types</h1>
     <table class="table text-center">
     <thead>

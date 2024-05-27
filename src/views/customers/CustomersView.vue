@@ -23,7 +23,7 @@ async function removeThisCustomer(id: number){
 
 <template>
 
-<div v-if="customers">   
+<div v-if="customers && customers.length > 0">   
     <h1 class="h3">Customers</h1>
     <table class="table text-center">
     <thead>
