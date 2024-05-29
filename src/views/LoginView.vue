@@ -23,6 +23,7 @@ async function doLogin(){
     
 }
 
+
 </script>
 
 <template>
@@ -50,4 +51,5 @@ async function doLogin(){
     max-width: 800px;
     margin: auto;
 }
+
 </style>

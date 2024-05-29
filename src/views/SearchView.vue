@@ -47,7 +47,7 @@ function removeMessage(){
         </form>
     </div>
     <div v-if="service">
-        <p>Customer: {{ service.device.customer.name }}</p>
+        <p id="customer">Customer: {{ service.device.customer.name }}</p>
         <table class="table text-center table-striped mt-4 table-hover table-borderless">
             <tbody>
                 <tr> <th scope="row">Code</th> <td>{{ service.code }}</td> </tr>
@@ -79,7 +79,7 @@ function removeMessage(){
 
 <style>
 
-p{ font-size: 1.5rem; }
+div > p#customer{ font-size: 1.5rem; }
 
 .input-search{ max-width: 400px; margin: auto; }
 

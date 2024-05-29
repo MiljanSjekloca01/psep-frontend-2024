@@ -1,8 +1,7 @@
 import axios, { AxiosError, type AxiosResponse } from "axios";
 import { AuthService,isAuthenticated } from "./auth.service";
-
 const client = axios.create({
-    baseURL:"http://localhost:4000/api",
+    baseURL: import.meta.env.VITE_API_BASE_URL,
     headers:{
         "Accept": "application/json"
     },
